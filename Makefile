@@ -1,7 +1,9 @@
 
 CFLAGS = -g
 
-allmazes: binary_tree sidewinder aldousbroder
+gamemazes: ldmazer etbmazer
+
+textmazes: binary_tree sidewinder aldousbroder
 
 test: testgrid testdistance
 	./testgrid
@@ -9,6 +11,17 @@ test: testgrid testdistance
 	@echo
 	@echo ALL TESTS SUCCEEDED
 
+ldmazer: ldmazer.o
+	cc -g -std=c99 -I/usr/include/SDL2 -Wall -Wextra -Wno-unused-value -o $@ $^ -lSDL2 -lSDL2_image
+
+etbmazer: etbmazer.o grid.o distance.o mazes.o
+	cc -g -std=c99 -I/usr/include/SDL2 -Wall -Wextra -Wno-unused-value -o $@ $^ -lSDL2 -lSDL2_image
+
+ldmazer.o: ldmazer.c
+	cc -g -std=c99 -I/usr/include/SDL2 -Wall -Wextra -Wno-unused-value -c -o $@ $^
+
+etbmazer.o: etbmazer.c
+	cc -g -std=c99 -I/usr/include/SDL2 -Wall -Wextra -Wno-unused-value -c -o $@ $^
 clean:
 	rm -rf *.o testgrid testdistance core
 

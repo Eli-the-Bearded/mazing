@@ -9,6 +9,21 @@ https://pragprog.com/book/jbmaze/mazes-for-programmers
 Programs
 --------
 
+Games
+
+1. ldmazer
+   * Not my code at all, written by luser.droog and posted to comp.lang.c
+   * Draws a naive Lew Pitcher maze and lets the user move around
+   * Not much fun, but a good skeleton of a maze game
+   * Uses SDL2 and SDL2_Image libraries for GUI output
+2. etbmazer
+   * This is ldmazer made into a simple game
+   * Now draws a full grid Aldous-Broder maze
+   * The user is timed for reaching the far corner
+   * Uses SDL2 and SDL2_Image libraries for GUI output
+
+Demos
+
 1. binary_tree
    * proof of concept maze, rather boring
    * ascii only output
